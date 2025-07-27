@@ -1,0 +1,119 @@
+/* Ini CSS */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+nav {
+    display: flex;
+}
+
+nav>a {
+    border: 1px solid;
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+}
+
+.logo-icon {
+    height: 50px;
+    width: 50px;
+    background-image: url(../assests/logo.jpeg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%
+}
+
+.photo-banner {
+    border: 1px solid;
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+}
+
+.photo-1 {
+    background-image: url(../assests/photo1.png);
+}
+
+.photo-2 {
+    background-image: url(../assests/photo2.jpg);
+}
+
+.photo-3 {
+    background-image: url(../assests/photo3.jpg);
+}
+
+.profile-icon {
+    height: 50px;
+    width: 50px;
+    background-image: url(../assests/logo.jpeg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%
+}
+
+.profile-icon-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile-icon-container>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input[type="text"], 
+form input[type="date"], 
+form textarea, 
+form input[type="radio"] {
+    width: 100%; 
+    max-width: 400px; 
+    margin-bottom: 10px; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.gender-container {
+    display: flex;
+    align-items: center;
+}
+
+.gender-container input {
+    margin-right: 5px;
+}
+
+.gender-container label {
+    margin-right: 20px;
+}
+
+#messageForm {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#formResult {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    max-width: 400px; 
+    margin-left: 20px; 
+    box-sizing: border-box;
+}
+
+/* max-width akan menerapkan style di bawah ukuran yang ditentukan
+min-width akan menerapkan style di atas ukuran yang ditentukan */
+@media only screen and (max-width: 375) {
+    .main-header {
+        flex-direction: column;
+    } 
+}

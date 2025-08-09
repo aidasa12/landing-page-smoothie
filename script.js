@@ -41,7 +41,8 @@ if (!popup) {
     <div class="popup-content">
       <img src="" alt="Menu Image">
       <h3></h3>
-      <p></p>
+      <p class="komposisi"></p>
+      <p class="manfaat"></p>
       <button>Tutup</button>
     </div>
   `;
@@ -50,22 +51,45 @@ if (!popup) {
 
 const popupImg = popup.querySelector("img");
 const popupTitle = popup.querySelector("h3");
-const popupDesc = popup.querySelector("p");
+const popupKomposisi = popup.querySelector(".komposisi");
+const popupManfaat = popup.querySelector(".manfaat");
 const popupClose = popup.querySelector("button");
 
 menuItems.forEach((item) => {
   item.addEventListener("click", () => {
     const imgSrc = item.querySelector("img").src;
     const title = item.querySelector("h3").textContent;
-    const desc = item.querySelector("p").textContent;
+    const komposisi = item.querySelector("p").textContent;
+    const manfaat = item.querySelector(".manfaat").textContent;
 
     popupImg.src = imgSrc;
     popupTitle.textContent = title;
-    popupDesc.textContent = desc;
+    popupKomposisi.textContent = komposisi;
+    popupManfaat.textContent = manfaat;
     popup.classList.add("active");
   });
 });
 
 popupClose.addEventListener("click", () => {
   popup.classList.remove("active");
+});
+
+// FORM HANDLER
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = this.querySelector("input[type='text']").value;
+  const email = this.querySelector("input[type='email']").value;
+  const message = this.querySelector("textarea").value;
+
+  const output = `
+    <h3>Hasil Form:</h3>
+    <p><strong>Nama:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Pesan:</strong> ${message}</p>
+  `;
+
+  document.getElementById("formOutput").innerHTML = output;
+
+  this.reset();
 });

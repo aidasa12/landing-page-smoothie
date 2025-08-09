@@ -73,9 +73,12 @@ header {
 
 .hero-slide {
   position: absolute;
-  width: 100%;
+  top: 0;
+  left: 0;
+  width: 100vw; /* agar gambar selebar layar (viewport) dari ujung ke ujung */
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* agar gambar tidak distorsi & tetap isi penuh */
+  background: #000; /* biar rapih kalo ada ruang ksosong */
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
@@ -186,7 +189,8 @@ footer {
   height: 100vh;
   background: rgba(0, 0, 0, 0.6);
   justify-content: center;
-  align-items: center;
+  align-items: center; 
+  padding-top: 20px;
   z-index: 999;
 }
 
@@ -198,9 +202,17 @@ footer {
   background: #fff;
   padding: 1rem;
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto; /* scroll kalau kontennya kepanjangan */
+  width: 90%; /* biar responsif di layar kecil */
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: calc(60px + 20px);
+}
+
+.menu-popup.active .popup-content {
+  transform: translateY(0);
 }
 
 .popup-content img {
@@ -245,4 +257,16 @@ footer {
   .hero-text p {
     font-size: 1rem;
   }
+}
+
+.form-output-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }

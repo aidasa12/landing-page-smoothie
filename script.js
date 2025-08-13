@@ -59,8 +59,8 @@ menuItems.forEach((item) => {
   item.addEventListener("click", () => {
     const imgSrc = item.querySelector("img").src;
     const title = item.querySelector("h3").textContent;
-    const komposisi = item.querySelector("p").textContent;
-    const manfaat = item.querySelector(".manfaat").textContent;
+    const komposisi = item.dataset.komposisi;
+    const manfaat = item.dataset.manfaat;
 
     popupImg.src = imgSrc;
     popupTitle.textContent = title;
